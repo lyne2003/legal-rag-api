@@ -3,7 +3,7 @@ from rag_logic import search_chunks
 
 app = FastAPI()
 
-@app.get("/query1")
+@app.get("/query2")
 def query_case(q: str = Query(...)):
     return search_chunks(q)
 

@@ -14,16 +14,11 @@ spec:
     spec:
       containers:
         - name: rag-api
-          image: rag-api:local
-          imagePullPolicy: Never
+          image: lynnmatta1/legal-rag-api:latest  # 🔁 use Docker Hub image
           ports:
             - containerPort: 8000
-          env:
-            - name: OPENAI_API_KEY               # ✅ Correct name
-              valueFrom:
-                secretKeyRef:
-                  name: openai-secret
-                  key: api-key
+
+
 ---
 apiVersion: v1
 kind: Service
