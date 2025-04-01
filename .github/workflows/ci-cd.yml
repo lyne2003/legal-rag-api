@@ -25,7 +25,3 @@ jobs:
       run: |
         mkdir -p $HOME/.kube
         echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > $HOME/.kube/config
-
-    - name: 🚀 Deploy to Kubernetes
-      run: |
-        kubectl set image deployment/rag-api rag-api=${{ secrets.DOCKER_USERNAME }}/legal-rag-api:latest
